@@ -34,6 +34,11 @@
     "intro": "How to write templates that display data and consume user events with the help of data binding."
   },
 
+    "attribute-directives": {
+    "title": "Attribute Directives",
+    "intro": "With attribute directives we can extend the functionality of elements in a template."
+  },
+  
   "dependency-injection": {
     "title": "Dependency Injection",
     "intro": "Angular's dependency injection system creates and delivers dependent services \"just-in-time\"."
