@@ -51,6 +51,18 @@
 
   "angular2/core" : [
     {
+      "title": "AMBIENT_DIRECTIVES",
+      "path": "core/AMBIENT_DIRECTIVES-const.html",
+      "docType": "const"
+    },
+  
+    {
+      "title": "AMBIENT_PIPES",
+      "path": "core/AMBIENT_PIPES-const.html",
+      "docType": "const"
+    },
+  
+    {
       "title": "APP_COMPONENT",
       "path": "core/APP_COMPONENT-const.html",
       "docType": "const"
@@ -132,6 +144,12 @@
       "title": "By",
       "path": "core/By-class.html",
       "docType": "class"
+    },
+  
+    {
+      "title": "COMMON_PIPES",
+      "path": "core/COMMON_PIPES-const.html",
+      "docType": "const"
     },
   
     {
@@ -276,18 +294,6 @@
       "title": "CyclicDependencyError",
       "path": "core/CyclicDependencyError-class.html",
       "docType": "class"
-    },
-  
-    {
-      "title": "DEFAULT_PIPES",
-      "path": "core/DEFAULT_PIPES-const.html",
-      "docType": "const"
-    },
-  
-    {
-      "title": "DEFAULT_PIPES_TOKEN",
-      "path": "core/DEFAULT_PIPES_TOKEN-const.html",
-      "docType": "const"
     },
   
     {
@@ -635,6 +641,12 @@
     {
       "title": "NG_VALIDATORS",
       "path": "core/NG_VALIDATORS-const.html",
+      "docType": "const"
+    },
+  
+    {
+      "title": "NG_VALUE_ACCESSOR",
+      "path": "core/NG_VALUE_ACCESSOR-const.html",
       "docType": "const"
     },
   
