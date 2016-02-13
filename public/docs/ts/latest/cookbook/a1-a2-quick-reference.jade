@@ -275,7 +275,7 @@ table(width="100%")
       :marked
         ### ng-if
       code-example(format="").
-        &ltdiv ng-if="listFilter">Movies filtered by: {{listFilter}}</div>
+        &lt;div ng-if="listFilter">Movies filtered by: {{listFilter}}</div>
       :marked
         In Angular&nbsp;1, the `ng-if` directive removes or recreates a portion of the DOM
         based on an expression. If the expression is false, the element is removed from the DOM.
@@ -285,7 +285,7 @@ table(width="100%")
       :marked
         ### *ngIf
       code-example(format="").
-        &ltdiv *ngIf="listFilter">Movies filtered by: {{listFilter.value}}</div>
+        &lt;div *ngIf="listFilter">Movies filtered by: {{listFilter.value}}</div>
       :marked
         The `*ngIf` directive in Angular&nbsp;2 works the same as the `ng-if` directive in Angular&nbsp;1, 
         it removes or recreates a portion of the DOM based on an expression. 
@@ -321,7 +321,7 @@ table(width="100%")
       :marked
         ### ng-repeat
       code-example(format="").
-        &lttr ng-repeat="movie in vm.movies">
+        &lt;tr ng-repeat="movie in vm.movies">
       :marked
         In Angular&nbsp;1, the `ng-repeat` directive repeats the associated DOM element
         for each item from the specified collection.
@@ -331,7 +331,7 @@ table(width="100%")
       :marked
         ### *ngFor
       code-example(format="").
-        &lttr *ngFor="#movie of movies">
+        &lt;tr *ngFor="#movie of movies">
       :marked
         The `*ngFor` directive in Angular&nbsp;2 works similar to the `ng-repeat` directive in Angular&nbsp;1, 
         it repeats the associated DOM element for each item from the specified collection.
@@ -348,7 +348,7 @@ table(width="100%")
       :marked
         ### ng-show
       code-example(format="").
-        &ltdiv ng-show="listFilter">Filter by: {{ listFilter }}</div>
+        &lt;div ng-show="listFilter">Filter by: {{ listFilter }}</div>
       :marked
         In Angular&nbsp;1, the `ng-show` directive shows or hides the associated DOM element based on
         an expression.
@@ -358,7 +358,7 @@ table(width="100%")
       :marked
         ### Property binding to the hidden property
       code-example(format="").
-        &ltdiv [hidden]="!listFilter">Filter by: {{ listFilter }}</div>
+        &lt;div [hidden]="!listFilter">Filter by: {{ listFilter }}</div>
       :marked
         Angular&nbsp;2, uses property binding instead of a built-in directive to hide and show DOM elements.
         We define a property binding by placing square brackets around the target property name and then
@@ -373,7 +373,7 @@ table(width="100%")
       :marked
         ### ng-src
       code-example(format="").
-        &ltimg ng-src="{{ movie.imageurl }}">
+        &lt;img ng-src="{{ movie.imageurl }}">
       :marked
         The `ng-src` directive allows Angular&nbsp;1 to preprocess the `src` property so it
         can replace the binding expression with the appropriate URL before the browser
@@ -382,8 +382,8 @@ table(width="100%")
       :marked
         ### Binding to the src property
       code-example(format="").
-        &ltimg [src]="movie.imageurl">
-        &ltimg src="{{ movie.imageurl }}">
+        &lt;img [src]="movie.imageurl">
+        &lt;img src="{{ movie.imageurl }}">
       :marked
         In Angular&nbsp;2, we bind a template expression directly to the `src` property, there is no built-in directive.
         
@@ -525,7 +525,7 @@ table(width="100%")
       :marked
         ### filter
       code-example.
-        &lttr ng-repeat="movie in movieList | filter: {title:listFilter}">
+        &lt;tr ng-repeat="movie in movieList | filter: {title:listFilter}">
       :marked
         Selects a subset of items from the defined collection based on the filter criteria.
     td
@@ -541,14 +541,14 @@ table(width="100%")
       :marked
         ### json
       code-example.
-        &ltpre>{{movie | json}}</pre>
+        &lt;pre>{{movie | json}}</pre>
       :marked
         Converts a JavaScript object into a JSON string. This is useful for debugging.
     td
       :marked
         ### json
       code-example.
-        &ltpre>{{movie | json}}</pre>
+        &lt;pre>{{movie | json}}</pre>
       :marked
         The Angular&nbsp;2 `json` pipe has comparable functionality to the `json` filter.
   tr(style=top)
@@ -556,7 +556,7 @@ table(width="100%")
       :marked
         ### limitTo
       code-example.
-        &lttr ng-repeat="movie in movieList | limitTo: 10">
+        &lt;tr ng-repeat="movie in movieList | limitTo: 10">
       :marked
         Selects the defined number of items from the collection.
     td
@@ -607,7 +607,7 @@ table(width="100%")
       :marked
         ### orderBy
       code-example.
-        &lttr ng-repeat="movie in movieList | orderBy : 'title'">
+        &lt;tr ng-repeat="movie in movieList | orderBy : 'title'">
       :marked
         Orders the collection as specified by the expression. 
         In this example, the movieList is ordered by the movie title.
