@@ -1,41 +1,60 @@
 <!-- Filter the Title   -->
-<div class="row">
-    <div class="col-md-2">Who is your favorite hero?</div>
-    <div class="col-md-4">
-        <input type="text" [(ngModel)]="favoriteHero" />
+<div>
+    <div>Who is your favorite hero?</div>
+    <div>
+<!-- #docregion ngModel -->
+<input [(ngModel)]="favoriteHero" />
+<!-- #enddocregion ngModel -->
 
-        <div [ngSwitch]="favoriteHero && checkMovieTitle(favoriteHero)">
-            <template [ngSwitchWhen]="true">Excellent choice!</template>
-            <template [ngSwitchWhen]="false">No movie, sorry!</template>
-            <template ngSwitchDefault>Please enter your favorite hero</template>
-        </div>
+<!-- #docregion ngSwitch-->
+<p [ngSwitch]="favoriteHero && 
+               checkMovieHero(favoriteHero)">
+  <template [ngSwitchWhen]="true">
+    Excellent choice!
+  </template>
+  <template [ngSwitchWhen]="false">
+    No movie, sorry!
+  </template>
+  <template ngSwitchDefault>
+    Please enter your favorite hero.
+  </template>
+</p>
+<!-- #enddocregion ngSwitch-->
     </div>
 </div>
 
-<div class="row" [hidden]="!favoriteHero">
+<!-- #docregion hidden -->
+<div [hidden]="!favoriteHero">
+    <!-- #docregion interpolation -->
     <h3>Your favorite hero is: {{favoriteHero}}</h3>
+    <!-- #enddocregion interpolation -->
 </div>
+<!-- #enddocregion hidden -->
 
-<div class="table-responsive">
-    <table class="table" *ngIf="movies.length">
+<div>
+<!-- #docregion ngIf -->
+    <table *ngIf="movies.length">
+<!-- #enddocregion ngIf -->
         <thead>
             <tr>
-                <td>
-                    <button type="button" class="btn btn-info" (click)="toggleImage()">
+                <th>
+                    <button (click)="toggleImage()">
                         {{showImage ? "Hide" : "Show"}} Poster
                     </button>
-                </td>
-                <td>Title</td>
-                <td>Hero</td>
-                <td>Release Date</td>
-                <td>Rating</td>
-                <td>Price</td>
-                <td>Star rating</td>
-                <td>Approval rating</td>
+                </th>
+                <th>Title</th>
+                <th>Hero</th>
+                <th>Release Date</th>
+                <th>Rating</th>
+                <th>Price</th>
+                <th>Star rating</th>
+                <th>Approval rating</th>
             </tr>
         </thead>
         <tbody>
+<!-- #docregion ngFor -->
             <tr *ngFor="#movie of movies">
+<!-- #enddocregion ngFor -->
                 <td>
                     <img [hidden]="!showImage || !movie.imageurl" 
                          [style.height.px]="50"
@@ -43,13 +62,19 @@
                          [src]="movie.imageurl" 
                          [title]="movie.title">
                 </td>
-                <td>{{ movie.title }}</td>
-                <td>{{ movie.hero }}</td>
-                <td>{{ convertToDate(movie.releaseDate) | date}}</td>
-                <td>{{ movie.mpaa | uppercase}}</td>
-                <td>{{ movie.price | currency:'USD':true}}</td>
-                <td>{{ movie.starRating | number:'1.1-2'}}</td>
-                <td>{{ movie.approvalRating | percent: '1.0-0'}}</td>
+                <td>{{movie.title}}</td>
+                <td>{{movie.hero}}</td>
+<!-- #docregion date-converted -->
+                <td>{{convertToDate(movie.releaseDate) | date}}</td>
+<!-- #enddocregion date-converted -->
+<!-- #docregion pipe -->
+                    <td>{{movie.mpaa | uppercase}}</td>
+<!-- #enddocregion pipe -->
+<!-- #docregion currency -->
+                <td>{{movie.price | currency:'USD':true}}</td>
+<!-- #enddocregion currency -->
+                <td>{{movie.starRating | number:'1.1-2'}}</td>
+                <td>{{movie.approvalRating | percent: '1.0-0'}}</td>
             </tr>
         </tbody>
     </table>

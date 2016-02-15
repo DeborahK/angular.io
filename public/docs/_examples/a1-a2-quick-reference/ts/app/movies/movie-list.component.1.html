@@ -1,0 +1,54 @@
+<!-- #docregion -->
+<!-- #docregion local -->
+<tr *ngFor="#movie of movies">
+  <td>{{movie.title}}</td>
+</tr>
+<!-- #enddocregion local -->
+
+<!-- #docregion ngClass -->
+<div [ngClass]="{active: isActive}">
+<div [ngClass]="{active: isActive, 
+                 bold: IsImportant}">
+<div [class.active]="isActive">
+<!-- #enddocregion ngClass -->
+
+<!-- #docregion event-binding -->
+<button (click)="toggleImage()">
+<button (click)="toggleImage($event)">
+<!-- #enddocregion event-binding -->
+
+<!-- #docregion href -->
+<a [href]="'#movieDetail/' + movie.id">{{movie.title}}</a>">
+<a href="#movieDetail/{{movie.id}}">{{movie.title}}</a>
+<a [routerLink]="['MovieDetail', {id: movie.id}]">{{movie.title}}</a>">
+<!-- #enddocregion href -->
+
+<!-- #docregion src -->
+<img [src]="movie.imageurl">
+<img src="{{movie.imageurl}}">
+<!-- #enddocregion src -->
+
+<!-- #docregion ngStyle -->
+<div [ngStyle]="{color: colorPreference}">
+<div [style.color]="colorPreference">
+<!-- #enddocregion ngStyle -->
+
+<!-- #docregion date -->
+<td>{{movie.releaseDate | date}}</td>
+<!-- #enddocregion date -->
+
+<!-- #docregion json -->
+<pre>{{movie | json}}</pre>
+<!-- #enddocregion json -->
+
+<!-- #docregion lowercase -->
+<div>{{movie.mpaa | lowercase}}</div>
+<!-- #enddocregion lowercase -->
+
+<!-- #docregion number -->
+<td>{{movie.starRating | number}}</td>
+<td>{{movie.starRating | number:'1.1-2'}}</td>
+<td>{{movie.approvalRating | percent: '1.0-2'}}</td>
+<!-- #enddocregion number -->
+
+<!-- #enddocregion -->
